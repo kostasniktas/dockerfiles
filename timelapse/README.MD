@@ -19,7 +19,7 @@ $ docker build -t timelapse:latest .
 
 ### Running
 
-You need an input folder and an output folder.  The image is designed to make copies of everything to reduce the changes of destroying originals.  Should still make a copy first.
+You need an input folder and an output folder.  The image is designed to make copies of everything to reduce the change of destroying originals.  Should still make a copy first.
 
 ```shell
 $ docker run --rm -it --user=$(id -u):$(id -g) -v /path/to/input_images:/input -v /path/to/output_folder:/output timelapse:latest
