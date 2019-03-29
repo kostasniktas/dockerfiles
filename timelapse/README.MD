@@ -25,6 +25,11 @@ You need an input folder and an output folder.  The image is designed to make co
 $ docker run --rm -it --user=$(id -u):$(id -g) -v /path/to/input_images:/input -v /path/to/output_folder:/output timelapse:latest
 ```
 
+## TODO
+
+* Center 4:3 pictures in 1080p or make the videos 4:3
+* Add arguments for more flexibility
+
 ## Notes
 
 * `jhead` documentation http://www.sentex.net/~mwandel/jhead/usage.html
