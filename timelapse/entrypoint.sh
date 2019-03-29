@@ -12,6 +12,4 @@ adduser -D -h /home/${USER} -u ${USERID} ${USER}
 chown -R ${USER} /home/${USER}
 
 echo "Command I got: ${@}"
-exec ${@}
-su - ${USER} -c 'exec ${@}'
-
+sudo -H -u ${USER} "${@}"
