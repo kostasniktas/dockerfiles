@@ -24,3 +24,9 @@ You need an input folder and an output folder.  The image is designed to make co
 ```shell
 $ docker run --rm -it --user=$(id -u):$(id -g) -v /path/to/input_images:/input -v /path/to/output_folder:/output timelapse:latest
 ```
+
+## Notes
+
+* `jhead` documentation http://www.sentex.net/~mwandel/jhead/usage.html
+* 
+
