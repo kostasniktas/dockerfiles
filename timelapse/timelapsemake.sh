@@ -22,9 +22,12 @@ shopt -s nocaseglob
 jhead -ntimelapse_%Y-%m-%d_%H%M%S "${OUTPUT}"/sorted_images/*.jpg
 shopt -u nocaseglob
 
+SCALE_HD="hd1080"
+SCALE_43="1440x1080"
+
 echo ""
 echo "Generating timelapse"
-ffmpeg -f image2 -r 30 -pattern_type glob -i "${OUTPUT}"/sorted_images/*.jpg -s hd1080 -vcodec libx264 "${OUTPUT}/timelapse_${CURRENT}.mp4"
+ffmpeg -f image2 -r 30 -pattern_type glob -i "${OUTPUT}"'/sorted_images/*.jpg' -s "${SCALE_HD}" -vcodec libx264 "${OUTPUT}/timelapse_${CURRENT}.mp4"
 
 echo ""
 echo "Timelapse at ${OUTPUT}/timelapse_${CURRENT}.mp4"
