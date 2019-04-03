@@ -29,6 +29,8 @@ $ docker run --rm -it --user=$(id -u):$(id -g) -v /path/to/input_images:/input -
 
 * Center 4:3 pictures in 1080p or make the videos 4:3
 * Add arguments for more flexibility
+* In the summary files, use exiftool or something similar to print columns for picture info
+* Auto adjust 4:3, 16:9, 16:10?
 
 ## Notes
 
