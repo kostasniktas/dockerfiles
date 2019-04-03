@@ -9,22 +9,23 @@ if [ "${1}" == "--help" ]; then
 fi
 
 CURRENT=$(date +%s)
+OUTPUT="/output/${CURRENT}"
 
 echo ""
 echo Making a copy of the input images
-mkdir /output/sorted_images
-cp /input/* /output/sorted_images
+mkdir -p "${OUTPUT}/sorted_images"
+cp /input/* "${OUTPUT}/sorted_images"
 
 echo ""
 echo Renaming images
 shopt -s nocaseglob
-jhead -ntimelapse_%Y-%m-%d_%H%M%S /output/sorted_images/*.jpg
+jhead -ntimelapse_%Y-%m-%d_%H%M%S "${OUTPUT}"/sorted_images/*.jpg
 shopt -u nocaseglob
 
 echo ""
 echo "Generating timelapse"
-ffmpeg -f image2 -r 30 -pattern_type glob -i '/output/sorted_images/*.jpg' -s hd1080 -vcodec libx264 "/output/timelapse_${CURRENT}.mp4"
+ffmpeg -f image2 -r 30 -pattern_type glob -i "${OUTPUT}"/sorted_images/*.jpg -s hd1080 -vcodec libx264 "${OUTPUT}/timelapse_${CURRENT}.mp4"
 
 echo ""
-echo "Timelapse at timelapse_${CURRENT}.mp4"
+echo "Timelapse at ${OUTPUT}/timelapse_${CURRENT}.mp4"
 
