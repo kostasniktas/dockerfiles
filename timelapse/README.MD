@@ -28,8 +28,10 @@ $ docker run --rm -it --user=$(id -u):$(id -g) -v /path/to/input_images:/input -
 ## TODO
 
 * Center 4:3 pictures in 1080p or make the videos 4:3
-* Add arguments for more flexibility
+* Add arguments for more flexibility (aspect ratio, etc.)
 * In the summary files, use exiftool or something similar to print columns for picture info
+* Add `basename` from input if possible to the output folder? (or maybe an option for a name arg)
+* Metadata for output mp4 with the last date (or first date?) of image so it gets sorted in photo apps
 * Auto adjust 4:3, 16:9, 16:10?
 
 ## Notes
